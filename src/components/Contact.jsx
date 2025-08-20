@@ -107,10 +107,15 @@ const Contact = () => {
               <p className="text-gray-600 text-lg sm:text-xl mb-4">
                 Get a detailed overview of my experience, skills, and achievements.
               </p>
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white text-lg sm:text-xl py-3 px-6 flex items-center">
+              <a
+                href="/Ahmed El_Shenawy_resume.pdf"       // path to the PDF in public folder
+                download                 // forces download
+                className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white text-lg sm:text-xl py-3 px-6 rounded transition-all duration-200"
+              >
                 <Download className="w-5 h-5 mr-2" /> Download Resume (PDF)
-              </Button>
+              </a>
             </div>
+
           </div>
 
           {/* Contact Form */}
