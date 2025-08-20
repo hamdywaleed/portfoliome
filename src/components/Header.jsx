@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Menu, X } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
+    const handleScroll = () => setIsScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -25,31 +23,32 @@ const Header = () => {
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+    if (element) element.scrollIntoView({ behavior: 'smooth' })
     setIsMenuOpen(false)
   }
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
-    }`}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+        }`}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-bold text-blue-900">Alex Johnson</h1>
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-900">
+              Ahmed El-Shenawy
+            </h1>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:block">
-            <ul className="flex space-x-8">
+            <ul className="flex space-x-10 lg:space-x-12">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <button
                     onClick={() => scrollToSection(item.href)}
-                    className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                    className="text-gray-800 hover:text-blue-600 transition-colors duration-200 text-lg sm:text-xl font-medium"
                   >
                     {item.label}
                   </button>
@@ -60,9 +59,9 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button 
+            <Button
               onClick={() => scrollToSection('#contact')}
-              className="bg-blue-600 hover:bg-blue-700 text-white"
+              className="bg-blue-600 hover:bg-blue-700 text-white text-lg sm:text-xl px-6 sm:px-8 py-3 sm:py-4 font-semibold transition-all duration-200"
             >
               Get In Touch
             </Button>
@@ -72,30 +71,30 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-200"
+              className="text-gray-800 hover:text-blue-600 transition-colors duration-200"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white shadow-lg rounded-lg mt-2">
+          <div className="md:hidden mt-2">
+            <div className="px-3 py-4 space-y-2 bg-white shadow-lg rounded-xl">
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors duration-200 font-medium"
+                  className="block w-full text-left px-4 py-3 text-gray-800 hover:text-blue-600 hover:bg-gray-50 text-lg font-medium rounded-md transition-colors duration-200"
                 >
                   {item.label}
                 </button>
               ))}
-              <div className="px-3 py-2">
-                <Button 
+              <div className="px-4 py-2">
+                <Button
                   onClick={() => scrollToSection('#contact')}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold transition-all duration-200"
                 >
                   Get In Touch
                 </Button>
@@ -109,4 +108,3 @@ const Header = () => {
 }
 
 export default Header
-
