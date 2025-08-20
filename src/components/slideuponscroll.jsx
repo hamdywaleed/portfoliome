@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 const ScrollRevealFast = ({ children, direction = "up", delay = 0 }) => {
 	// Smaller offset for faster perception
-	const offset = direction === "up" ? 30 : direction === "down" ? -30 : 0
+	const offset = direction === "up" ? 10 : direction === "down" ? -10 : 0
 
 	return (
 		<motion.div
