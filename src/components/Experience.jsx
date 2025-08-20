@@ -1,5 +1,4 @@
-import React from 'react'
-import { Calendar, MapPin, Award, GraduationCap } from 'lucide-react'
+import { Calendar, GraduationCap, MapPin } from 'lucide-react'
 
 const Experience = () => {
   const workExperience = [
@@ -63,26 +62,6 @@ const Experience = () => {
     }
   ]
 
-  const awards = [
-    {
-      title: "Innovation Award",
-      organization: "TechCorp Solutions",
-      year: "2023",
-      description: "Recognized for developing an AI-powered code review system"
-    },
-    {
-      title: "Best Mobile App",
-      organization: "Regional Hackathon",
-      year: "2022",
-      description: "Won first place for developing a mental health support app"
-    },
-    {
-      title: "Open Source Contributor",
-      organization: "GitHub",
-      year: "2021",
-      description: "Top 1% contributor in JavaScript repositories"
-    }
-  ]
 
   return (
     <section id="experience" className="py-20 bg-gray-50">
@@ -102,19 +81,19 @@ const Experience = () => {
             <Calendar className="w-6 h-6 mr-3 text-blue-600" />
             Work Experience
           </h3>
-          
+
           <div className="space-y-8">
             {workExperience.map((job, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg p-8 relative">
                 {/* Timeline dot */}
                 <div className="absolute -left-4 top-8 w-8 h-8 bg-blue-600 rounded-full border-4 border-white shadow-lg"></div>
-                
+
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                   <div className="lg:col-span-2">
                     <h4 className="text-xl font-semibold text-gray-900 mb-2">
                       {job.title}
                     </h4>
-                    
+
                     <div className="flex flex-wrap gap-4 mb-4 text-gray-600">
                       <span className="font-medium text-blue-600">{job.company}</span>
                       <span className="flex items-center">
@@ -126,11 +105,11 @@ const Experience = () => {
                         {job.period}
                       </span>
                     </div>
-                    
+
                     <p className="text-gray-600 mb-4">
                       {job.description}
                     </p>
-                    
+
                     <div className="mb-4">
                       <h5 className="font-semibold text-gray-900 mb-2">Key Achievements:</h5>
                       <ul className="space-y-1">
@@ -143,12 +122,12 @@ const Experience = () => {
                       </ul>
                     </div>
                   </div>
-                  
+
                   <div>
                     <h5 className="font-semibold text-gray-900 mb-3">Technologies Used:</h5>
                     <div className="flex flex-wrap gap-2">
                       {job.technologies.map((tech, techIndex) => (
-                        <span 
+                        <span
                           key={techIndex}
                           className="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full"
                         >
@@ -169,7 +148,7 @@ const Experience = () => {
             <GraduationCap className="w-6 h-6 mr-3 text-blue-600" />
             Education
           </h3>
-          
+
           {education.map((edu, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg p-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -177,7 +156,7 @@ const Experience = () => {
                   <h4 className="text-xl font-semibold text-gray-900 mb-2">
                     {edu.degree}
                   </h4>
-                  
+
                   <div className="space-y-2 mb-4 text-gray-600">
                     <div className="font-medium text-blue-600">{edu.school}</div>
                     <div className="flex items-center">
@@ -191,7 +170,7 @@ const Experience = () => {
                     <div className="font-medium">GPA: {edu.gpa}</div>
                   </div>
                 </div>
-                
+
                 <div>
                   <h5 className="font-semibold text-gray-900 mb-3">Achievements:</h5>
                   <ul className="space-y-1">
@@ -206,36 +185,6 @@ const Experience = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Awards */}
-        <div>
-          <h3 className="text-2xl font-semibold text-gray-900 mb-8 flex items-center">
-            <Award className="w-6 h-6 mr-3 text-blue-600" />
-            Awards & Recognition
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {awards.map((award, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg p-6 text-center">
-                <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Award className="w-8 h-8 text-yellow-600" />
-                </div>
-                
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                  {award.title}
-                </h4>
-                
-                <p className="text-blue-600 font-medium mb-2">
-                  {award.organization} • {award.year}
-                </p>
-                
-                <p className="text-gray-600 text-sm">
-                  {award.description}
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

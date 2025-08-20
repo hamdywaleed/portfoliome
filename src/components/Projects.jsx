@@ -1,6 +1,5 @@
-import React from 'react'
-import { ExternalLink, Github } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { ExternalLink, Github } from 'lucide-react'
 
 const Projects = () => {
   const projects = [
@@ -83,21 +82,21 @@ const Projects = () => {
                   <p className="text-sm">Project Screenshot</p>
                 </div>
               </div>
-              
+
               {/* Project Content */}
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {project.title}
                 </h3>
-                
+
                 <p className="text-gray-600 mb-4 line-clamp-3">
                   {project.description}
                 </p>
-                
+
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, index) => (
-                    <span 
+                    <span
                       key={index}
                       className="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full"
                     >
@@ -105,7 +104,7 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                
+
                 {/* Features */}
                 <div className="mb-6">
                   <h4 className="font-semibold text-gray-900 mb-2">Key Features:</h4>
@@ -118,7 +117,7 @@ const Projects = () => {
                     ))}
                   </ul>
                 </div>
-                
+
                 {/* Action Buttons */}
                 <div className="flex gap-3">
                   <Button
@@ -126,14 +125,6 @@ const Projects = () => {
                     size="sm"
                     className="flex items-center gap-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
                     onClick={() => window.open(project.githubUrl, '_blank')}
-                  >
-                    <Github className="w-4 h-4" />
-                    Source Code
-                  </Button>
-                  <Button
-                    size="sm"
-                    className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white"
-                    onClick={() => window.open('#', '_blank')}
                   >
                     <ExternalLink className="w-4 h-4" />
                     Learn More
