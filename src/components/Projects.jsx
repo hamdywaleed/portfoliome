@@ -58,47 +58,47 @@ const Projects = () => {
   ]
 
   return (
-    <section id="projects" className="py-20 bg-gray-50">
+    <section id="projects" className="py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Featured Projects
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto">
             A showcase of my recent work and contributions to various projects, demonstrating my skills across different technologies and domains.
           </p>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
           {projects.map((project) => (
-            <div key={project.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div key={project.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
               {/* Project Image */}
-              <div className="h-48 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
+              <div className="h-56 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
                 <div className="text-gray-500 text-center">
-                  <div className="w-16 h-16 mx-auto mb-2 bg-gray-300 rounded-lg flex items-center justify-center">
-                    <ExternalLink className="w-8 h-8" />
+                  <div className="w-20 h-20 mx-auto mb-2 bg-gray-300 rounded-lg flex items-center justify-center">
+                    <ExternalLink className="w-10 h-10" />
                   </div>
-                  <p className="text-sm">Project Screenshot</p>
+                  <p className="text-sm sm:text-base">Project Screenshot</p>
                 </div>
               </div>
 
               {/* Project Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <div className="p-8">
+                <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">
                   {project.title}
                 </h3>
 
-                <p className="text-gray-600 mb-4 line-clamp-3">
+                <p className="text-gray-600 mb-6 text-lg sm:text-xl line-clamp-3">
                   {project.description}
                 </p>
 
                 {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-3 mb-6">
                   {project.technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full"
+                      className="px-3 py-1 bg-blue-100 text-blue-700 text-sm sm:text-base rounded-full"
                     >
                       {tech}
                     </span>
@@ -107,8 +107,8 @@ const Projects = () => {
 
                 {/* Features */}
                 <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-2">Key Features:</h4>
-                  <ul className="text-gray-600 text-sm space-y-1">
+                  <h4 className="font-semibold text-gray-900 text-lg sm:text-xl mb-2">Key Features:</h4>
+                  <ul className="text-gray-600 text-sm sm:text-base space-y-1">
                     {project.features.map((feature, index) => (
                       <li key={index} className="flex items-start">
                         <span className="text-blue-600 mr-2">•</span>
@@ -137,15 +137,15 @@ const Projects = () => {
 
         {/* Call to Action */}
         <div className="text-center">
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-600 mb-6 text-lg sm:text-xl">
             Interested in seeing more of my work?
           </p>
           <Button
             variant="outline"
-            className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3"
+            className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 sm:py-3 text-lg sm:text-xl"
             onClick={() => window.open('https://github.com', '_blank')}
           >
-            <Github className="w-5 h-5 mr-2" />
+            <Github className="w-6 h-6 mr-2" />
             View All Projects on GitHub
           </Button>
         </div>
@@ -155,4 +155,3 @@ const Projects = () => {
 }
 
 export default Projects
-
