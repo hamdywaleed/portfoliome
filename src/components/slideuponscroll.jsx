@@ -9,7 +9,7 @@ const ScrollRevealFast = ({ children, direction = "up", delay = 0 }) => {
 			initial={{ opacity: 0, y: offset, scale: 0.97 }}   // smaller scale + offset
 			whileInView={{ opacity: 1, y: 0, scale: 1 }}       // animate to normal
 			viewport={{ once: true, amount: 0.3 }}
-			transition={{ duration: 0.4, ease: "easeOut", delay }} // faster, snappier
+			transition={{ duration: 0.2, ease: "easeOut", delay }} // faster, snappier
 		>
 			{children}
 		</motion.div>
