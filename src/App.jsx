@@ -1,14 +1,14 @@
-import React from 'react'
 import './App.css'
+import About from './components/About'
+import Contact from './components/Contact'
+import Experience from './components/Experience'
+import Footer from './components/Footer'
 import Header from './components/Header'
 import Hero from './components/Hero'
-import About from './components/About'
-import Skills from './components/Skills'
 import Projects from './components/Projects'
-import Experience from './components/Experience'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import Skills from './components/Skills'
+import SlideUpOnScroll from './components/slideuponscroll'
 
 function App() {
   return (
@@ -16,11 +16,26 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Contact />
+        <SlideUpOnScroll>
+          <About />
+        </SlideUpOnScroll>
+
+        <SlideUpOnScroll>
+          <Skills />
+        </SlideUpOnScroll>
+
+
+        <SlideUpOnScroll>
+          <Projects />
+        </SlideUpOnScroll>
+
+        <SlideUpOnScroll>
+          <Experience />
+        </SlideUpOnScroll>
+
+        <SlideUpOnScroll>
+          <Contact />
+        </SlideUpOnScroll>
       </main>
       <Footer />
       <ScrollToTop />
