@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
 import { ExternalLink, Github } from 'lucide-react'
-import OnlineStoreImg from '../assets/profile.jpeg'
+import OnlineStoreImg from '../assets/cover.png'
 
 const Projects = () => {
   const projects = [
