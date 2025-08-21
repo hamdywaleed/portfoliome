@@ -128,7 +128,7 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
+          {/* Contact Form  */}
           <div>
             <div className="bg-gray-50 rounded-lg p-8">
               <h3 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-6">Send Me a Message</h3>
