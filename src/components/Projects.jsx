@@ -1,7 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
 import { ExternalLink, Github } from 'lucide-react'
-import Image from 'next/image'
 import OnlineStoreImg from '../assets/profile.jpeg'
 
 const Projects = () => {
@@ -65,7 +64,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-24 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-base sm:text-lg">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           className="text-center mb-20"
@@ -81,7 +80,7 @@ const Projects = () => {
           </motion.h2>
           <motion.p
             variants={fadeUp}
-            className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto"
+            className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto"
           >
             A showcase of my recent work demonstrating backend and full-stack development
             skills.
@@ -102,11 +101,10 @@ const Projects = () => {
             >
               {/* Project Image */}
               <div className="relative w-full h-64">
-                <Image
+                <img
                   src={project.coverImage}
                   alt={`${project.title} cover`}
-                  fill
-                  className="object-cover rounded-t-2xl transition-transform duration-300 hover:scale-105"
+                  className="w-full h-full object-cover rounded-t-2xl transition-transform duration-300 hover:scale-105"
                 />
               </div>
 
