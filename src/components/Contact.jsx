@@ -46,7 +46,7 @@ const Contact = () => {
 
   const contactInfo = [
     { icon: <Mail className="w-7 h-7" />, title: "Email", value: "ahmedelshenawy91@gmail.com", link: "mailto:ahmedelshenawy91@gmail.com" },
-    { icon: <Phone className="w-7 h-7" />, title: "Phone", value: "+20 123 456 789", link: "tel:+20123456789" },
+    { icon: <Phone className="w-7 h-7" />, title: "Phone", value: "+20 102 878 6309", link: "tel:+20123456789" },
     { icon: <MapPin className="w-7 h-7" />, title: "Location", value: "Cairo, Egypt", link: null }
   ]
 
@@ -72,7 +72,7 @@ const Contact = () => {
           <div>
             <h3 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-8">Let's Start a Conversation</h3>
             <p className="text-lg sm:text-xl text-gray-600 mb-8">
-              Whether you're looking to hire a software engineer, collaborate on a project, or just want to say hello, I'd love to hear from you. I typically respond within 24 hours.
+              Have a project, idea, or opportunity? I’d love to hear from you and usually respond within 24 hours.
             </p>
 
             <div className="space-y-6 mb-8">

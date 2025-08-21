@@ -1,113 +1,142 @@
 import { Button } from '@/components/ui/button'
+import { motion } from 'framer-motion'
 import { ExternalLink, Github } from 'lucide-react'
+import OnlineStoreImg from '../assets/profile.jpeg'
 
 const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with React frontend, Node.js backend, and integrated payment processing. Features include user authentication, product catalog, shopping cart, and admin dashboard.",
-      image: "/api/placeholder/600/400",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "JWT"],
-      githubUrl: "https://github.com/alexjohnson/ecommerce-platform",
+      title: "Online Store Backend",
+      description:
+        "Backend for an online store using Node.js and PostgreSQL with RESTful APIs. Built and delivered the full project from development to deployment, integrating APIs and deployment pipelines for full functionality.",
+      technologies: ["Node.js", "PostgreSQL", "Express", "REST API"],
+      githubUrl: "https://github.com/yourusername/online-store-backend",
+      coverImage: OnlineStoreImg,
       features: [
-        "User authentication & authorization",
-        "Product catalog with search & filters",
-        "Shopping cart & checkout process"
-      ]
+        "RESTful API development",
+        "Database integration with PostgreSQL",
+        "Full project deployment and pipeline setup",
+      ],
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "A collaborative task management application built with React Native for cross-platform mobile development. Includes real-time updates, offline sync, and team collaboration features.",
-      image: "/api/placeholder/600/400",
-      technologies: ["React Native", "Firebase", "Redux", "Expo"],
-      githubUrl: "https://github.com/alexjohnson/task-manager",
+      title: "ImageResizing API",
+      description:
+        "API to resize images via URL requests, enabling dynamic image processing for web and mobile applications.",
+      technologies: ["Node.js", "Express", "Sharp"],
+      githubUrl: "https://github.com/yourusername/image-resizing-api",
+      coverImage: OnlineStoreImg,
       features: [
-        "Cross-platform mobile application",
-        "Real-time collaboration",
-        "Offline data synchronization"
-      ]
+        "Resize images via URL requests",
+        "High-performance image processing",
+        "Easy integration with other applications",
+      ],
     },
     {
       id: 3,
-      title: "Data Visualization Dashboard",
-      description: "An interactive business analytics dashboard featuring real-time data visualization, custom charts, and export functionality. Built with modern web technologies for optimal performance.",
-      image: "/api/placeholder/600/400",
-      technologies: ["React", "D3.js", "Python", "PostgreSQL", "Docker"],
-      githubUrl: "https://github.com/alexjohnson/analytics-dashboard",
+      title: "Full-Stack App with CircleCI",
+      description:
+        "Integrated front-end interfaces with back-end APIs to create a fully functional application. Automated the development workflow using CircleCI for CI/CD.",
+      technologies: ["React", "Node.js", "Express", "CircleCI"],
+      githubUrl: "https://github.com/yourusername/fullstack-circleci-app",
+      coverImage: OnlineStoreImg,
       features: [
-        "Interactive data visualizations",
-        "Real-time data updates",
-        "Custom chart configurations"
-      ]
+        "Front-end and back-end integration",
+        "Automated CI/CD pipeline with CircleCI",
+        "Fully functional full-stack application",
+      ],
     },
-    {
-      id: 4,
-      title: "Open Source Contribution",
-      description: "Significant contributions to popular open-source projects including bug fixes, feature implementations, and documentation improvements. Active maintainer of several community projects.",
-      image: "/api/placeholder/600/400",
-      technologies: ["JavaScript", "TypeScript", "Python", "Documentation"],
-      githubUrl: "https://github.com/alexjohnson/opensource-contributions",
-      features: [
-        "Bug fixes and performance improvements",
-        "New feature implementations",
-        "Documentation enhancements"
-      ]
-    }
   ]
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  }
+
+  const hoverCard = {
+    hover: { scale: 1.03, boxShadow: "0px 15px 30px rgba(0,0,0,0.15)" },
+  }
+
+  const techHover = {
+    hover: { scale: 1.1, backgroundColor: "#3b82f6", color: "#fff" },
+  }
 
   return (
     <section id="projects" className="py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+        {/* Header */}
+        <motion.div
+          className="text-center mb-20"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <motion.h2
+            variants={fadeUp}
+            className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4"
+          >
             Featured Projects
-          </h2>
-          <p className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto">
-            A showcase of my recent work and contributions to various projects, demonstrating my skills across different technologies and domains.
-          </p>
-        </div>
+          </motion.h2>
+          <motion.p
+            variants={fadeUp}
+            className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto"
+          >
+            A showcase of my recent work demonstrating backend and full-stack development
+            skills.
+          </motion.p>
+        </motion.div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
           {projects.map((project) => (
-            <div key={project.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+            <motion.div
+              key={project.id}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              whileHover={hoverCard.hover}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden transition-shadow duration-300 cursor-pointer max-w-lg mx-auto"
+            >
               {/* Project Image */}
-              <div className="h-56 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
-                <div className="text-gray-500 text-center">
-                  <div className="w-20 h-20 mx-auto mb-2 bg-gray-300 rounded-lg flex items-center justify-center">
-                    <ExternalLink className="w-10 h-10" />
-                  </div>
-                  <p className="text-sm sm:text-base">Project Screenshot</p>
-                </div>
+              <div className="relative w-full h-64">
+                <img
+                  src={project.coverImage}
+                  alt={`${project.title} cover`}
+                  className="w-full h-full object-cover rounded-t-2xl transition-transform duration-300 hover:scale-105"
+                />
               </div>
 
               {/* Project Content */}
-              <div className="p-8">
-                <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">
+              <div className="p-6">
+                <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-3">
                   {project.title}
                 </h3>
 
-                <p className="text-gray-600 mb-6 text-lg sm:text-xl line-clamp-3">
+                <p className="text-gray-700 mb-4 text-base sm:text-lg line-clamp-3">
                   {project.description}
                 </p>
 
                 {/* Technologies */}
-                <div className="flex flex-wrap gap-3 mb-6">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, index) => (
-                    <span
+                    <motion.span
                       key={index}
-                      className="px-3 py-1 bg-blue-100 text-blue-700 text-sm sm:text-base rounded-full"
+                      variants={techHover}
+                      whileHover="hover"
+                      className="px-3 py-1 bg-blue-100 text-blue-700 text-sm sm:text-base rounded-full transition-colors duration-200"
                     >
                       {tech}
-                    </span>
+                    </motion.span>
                   ))}
                 </div>
 
                 {/* Features */}
-                <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 text-lg sm:text-xl mb-2">Key Features:</h4>
+                <div className="mb-4">
+                  <h4 className="font-semibold text-gray-900 text-base sm:text-lg mb-1">
+                    Key Features:
+                  </h4>
                   <ul className="text-gray-600 text-sm sm:text-base space-y-1">
                     {project.features.map((feature, index) => (
                       <li key={index} className="flex items-start">
@@ -119,36 +148,42 @@ const Projects = () => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-3">
+                <div className="flex gap-2">
                   <Button
                     variant="outline"
                     size="sm"
-                    className="flex items-center gap-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
-                    onClick={() => window.open(project.githubUrl, '_blank')}
+                    className="flex items-center gap-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-200 text-sm sm:text-base"
+                    onClick={() => window.open(project.githubUrl, "_blank")}
                   >
                     <ExternalLink className="w-4 h-4" />
                     Learn More
                   </Button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Call to Action */}
-        <div className="text-center">
+        <motion.div
+          className="text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+        >
           <p className="text-gray-600 mb-6 text-lg sm:text-xl">
             Interested in seeing more of my work?
           </p>
           <Button
             variant="outline"
-            className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 sm:py-3 text-lg sm:text-xl"
-            onClick={() => window.open('https://github.com', '_blank')}
+            className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 sm:py-3 text-lg sm:text-xl transition-all duration-200"
+            onClick={() => window.open("https://github.com/yourusername", "_blank")}
           >
             <Github className="w-6 h-6 mr-2" />
             View All Projects on GitHub
           </Button>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
