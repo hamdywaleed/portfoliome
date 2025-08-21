@@ -40,12 +40,7 @@ const Experience = () => {
     }
   ]
 
-  // Motion Variants
-  const fadeUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
-  }
-
+  // Hover Animations Only
   const hoverCard = {
     hover: { scale: 1.03, boxShadow: '0px 15px 30px rgba(0,0,0,0.15)' }
   }
@@ -57,20 +52,16 @@ const Experience = () => {
   return (
     <section id="experience" className="py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Section Header */}
-        <motion.div
-          className="text-center mb-20"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <motion.h2 variants={fadeUp} className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Experience & Education
-          </motion.h2>
-          <motion.p variants={fadeUp} className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto">
+          </h2>
+          <p className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto">
             My professional journey and educational background that shaped my expertise.
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
         {/* Work Experience */}
         <div className="mb-20">
@@ -83,10 +74,6 @@ const Experience = () => {
             {workExperience.map((job, index) => (
               <motion.div
                 key={index}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
                 whileHover={hoverCard.hover}
                 className="bg-white rounded-lg shadow-lg p-8 relative transition-all cursor-pointer"
               >
@@ -129,8 +116,8 @@ const Experience = () => {
                       {job.technologies.map((tech, techIndex) => (
                         <motion.span
                           key={techIndex}
-                          variants={techHover}
                           whileHover="hover"
+                          variants={techHover}
                           className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full transition-colors duration-200"
                         >
                           {tech}
@@ -155,10 +142,6 @@ const Experience = () => {
             {education.map((edu, index) => (
               <motion.div
                 key={index}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
                 whileHover={hoverCard.hover}
                 className="bg-white rounded-lg shadow-lg p-8 transition-all cursor-pointer"
               >

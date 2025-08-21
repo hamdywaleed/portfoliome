@@ -63,11 +63,6 @@ const Projects = () => {
     },
   ]
 
-  const fadeUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-  }
-
   const hoverCard = {
     hover: { scale: 1.04, boxShadow: "0px 25px 50px rgba(0,0,0,0.2)" },
   }
@@ -80,35 +75,20 @@ const Projects = () => {
     <section id="projects" className="py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <motion.div
-          className="text-center mb-20"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <motion.h2
-            variants={fadeUp}
-            className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4"
-          >
+        <div className="text-center mb-20">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Featured Projects
-          </motion.h2>
-          <motion.p
-            variants={fadeUp}
-            className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto"
-          >
+          </h2>
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
             A showcase of my recent work demonstrating backend and full-stack development skills.
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
           {projects.map((project) => (
             <motion.div
               key={project.id}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
               whileHover={hoverCard.hover}
               className="bg-white rounded-3xl shadow-xl overflow-hidden transition-all duration-300 cursor-pointer w-full sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto"
             >
@@ -120,9 +100,7 @@ const Projects = () => {
                     alt={`${project.title} cover`}
                     className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                  {/* Title Overlay */}
                   <div className="absolute bottom-4 left-4 sm:left-6 sm:bottom-6 text-white">
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold drop-shadow-lg ">
                       {project.title}
@@ -184,13 +162,7 @@ const Projects = () => {
         </div>
 
         {/* Call to Action */}
-        <motion.div
-          className="text-center"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeUp}
-        >
+        <div className="text-center">
           <p className="text-gray-600 mb-6 text-lg sm:text-xl">
             Interested in seeing more of my work?
           </p>
@@ -202,7 +174,7 @@ const Projects = () => {
             <Github className="w-6 h-6 mr-2" />
             View All Projects on GitHub
           </Button>
-        </motion.div>
+        </div>
       </div>
     </section>
   )
