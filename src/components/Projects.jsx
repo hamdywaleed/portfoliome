@@ -55,7 +55,7 @@ const Projects = () => {
   }
 
   const hoverCard = {
-    hover: { scale: 1.03, boxShadow: "0px 15px 30px rgba(0,0,0,0.15)" },
+    hover: { scale: 1.03, boxShadow: "0px 20px 35px rgba(0,0,0,0.15)" },
   }
 
   const techHover = {
@@ -80,15 +80,14 @@ const Projects = () => {
           </motion.h2>
           <motion.p
             variants={fadeUp}
-            className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto"
+            className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto"
           >
-            A showcase of my recent work demonstrating backend and full-stack development
-            skills.
+            A showcase of my recent work demonstrating backend and full-stack development skills.
           </motion.p>
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {projects.map((project) => (
             <motion.div
               key={project.id}
@@ -97,20 +96,20 @@ const Projects = () => {
               whileInView="visible"
               viewport={{ once: true }}
               whileHover={hoverCard.hover}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden transition-shadow duration-300 cursor-pointer max-w-lg mx-auto"
+              className="bg-white rounded-3xl shadow-lg overflow-hidden transition-all duration-300 cursor-pointer w-full max-w-2xl mx-auto"
             >
               {/* Project Image */}
-              <div className="relative w-full h-64">
+              <div className="relative w-full h-48">
                 <img
                   src={project.coverImage}
                   alt={`${project.title} cover`}
-                  className="w-full h-full object-cover rounded-t-2xl transition-transform duration-300 hover:scale-105"
+                  className="w-full h-full object-cover rounded-t-3xl transition-transform duration-300 hover:scale-105"
                 />
               </div>
 
               {/* Project Content */}
               <div className="p-6">
-                <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-2">
                   {project.title}
                 </h3>
 
@@ -125,7 +124,7 @@ const Projects = () => {
                       key={index}
                       variants={techHover}
                       whileHover="hover"
-                      className="px-3 py-1 bg-blue-100 text-blue-700 text-sm sm:text-base rounded-full transition-colors duration-200"
+                      className="px-3 py-1 bg-blue-100 text-blue-700 text-sm sm:text-base rounded-full transition-all duration-200"
                     >
                       {tech}
                     </motion.span>
@@ -148,7 +147,7 @@ const Projects = () => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-2">
+                <div className="flex gap-3 mt-4">
                   <Button
                     variant="outline"
                     size="sm"
