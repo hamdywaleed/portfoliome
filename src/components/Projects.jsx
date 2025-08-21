@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
 import { ExternalLink, Github } from 'lucide-react'
-import OnlineStoreImg from '../assets/cover.png'
+import OnlineStoreImg from '../assets/cover2.png'
 
 const Projects = () => {
   const projects = [
@@ -96,20 +96,24 @@ const Projects = () => {
               whileInView="visible"
               viewport={{ once: true }}
               whileHover={hoverCard.hover}
-              className="bg-white rounded-3xl shadow-xl overflow-hidden transition-all duration-300 cursor-pointer w-full max-w-3xl mx-auto"
+              className="bg-white rounded-3xl shadow-xl overflow-hidden transition-all duration-300 cursor-pointer w-full sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto"
             >
               {/* Project Image */}
-              <div className="relative w-full h-60 rounded-t-3xl overflow-hidden">
-                <img
-                  src={project.coverImage}
-                  alt={`${project.title} cover`}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <h3 className="text-xl sm:text-2xl font-bold drop-shadow-lg">
-                    {project.title}
-                  </h3>
+              <div className="relative w-full rounded-t-3xl overflow-hidden group">
+                <div className="w-full h-0 pt-[56.25%] relative">
+                  <img
+                    src={project.coverImage}
+                    alt={`${project.title} cover`}
+                    className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                  {/* Title Overlay */}
+                  <div className="absolute bottom-4 left-4 sm:left-6 sm:bottom-6 text-white">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold drop-shadow-lg">
+                      {project.title}
+                    </h3>
+                  </div>
                 </div>
               </div>
 
