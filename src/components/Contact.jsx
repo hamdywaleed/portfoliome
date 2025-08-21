@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import emailjs from '@emailjs/browser'
 import { Download, Github, Linkedin, Mail, MapPin, Phone, Send, Twitter } from 'lucide-react'
 import { useState } from 'react'
 
@@ -24,25 +25,35 @@ const Contact = () => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    setTimeout(() => {
-      setIsSubmitting(false)
+    try {
+      await emailjs.send(
+        'service_67jk2x2',   // replace with your EmailJS service ID
+        'template_kni3rnz',  // replace with your EmailJS template ID
+        formData,
+        'DHno3fGxHEoSFnRZg'    // replace with your EmailJS public key
+      )
+
       setSubmitStatus('success')
       setFormData({ name: '', email: '', subject: '', message: '' })
-
+    } catch (err) {
+      console.error(err)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
       setTimeout(() => setSubmitStatus(''), 3000)
-    }, 1000)
+    }
   }
 
   const contactInfo = [
-    { icon: <Mail className="w-7 h-7" />, title: "Email", value: "alex.johnson@email.com", link: "mailto:alex.johnson@email.com" },
-    { icon: <Phone className="w-7 h-7" />, title: "Phone", value: "+1 (555) 123-4567", link: "tel:+15551234567" },
-    { icon: <MapPin className="w-7 h-7" />, title: "Location", value: "San Francisco, CA", link: null }
+    { icon: <Mail className="w-7 h-7" />, title: "Email", value: "ahmedelshenawy91@gmail.com", link: "mailto:ahmedelshenawy91@gmail.com" },
+    { icon: <Phone className="w-7 h-7" />, title: "Phone", value: "+20 123 456 789", link: "tel:+20123456789" },
+    { icon: <MapPin className="w-7 h-7" />, title: "Location", value: "Cairo, Egypt", link: null }
   ]
 
   const socialLinks = [
-    { icon: <Github className="w-7 h-7" />, name: "GitHub", url: "https://github.com/alexjohnson", color: "hover:text-gray-900" },
-    { icon: <Linkedin className="w-7 h-7" />, name: "LinkedIn", url: "https://linkedin.com/in/alexjohnson", color: "hover:text-blue-600" },
-    { icon: <Twitter className="w-7 h-7" />, name: "Twitter", url: "https://twitter.com/alexjohnson", color: "hover:text-blue-400" }
+    { icon: <Github className="w-7 h-7" />, name: "GitHub", url: "https://github.com/yourusername", color: "hover:text-gray-900" },
+    { icon: <Linkedin className="w-7 h-7" />, name: "LinkedIn", url: "https://linkedin.com/in/yourusername", color: "hover:text-blue-600" },
+    { icon: <Twitter className="w-7 h-7" />, name: "Twitter", url: "https://twitter.com/yourusername", color: "hover:text-blue-400" }
   ]
 
   return (
@@ -108,14 +119,13 @@ const Contact = () => {
                 Get a detailed overview of my experience, skills, and achievements.
               </p>
               <a
-                href="/Ahmed El_Shenawy_resume.pdf"       // path to the PDF in public folder
-                download                 // forces download
+                href="/Ahmed_El_Shenawy_resume.pdf"
+                download
                 className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white text-lg sm:text-xl py-3 px-6 rounded transition-all duration-200"
               >
                 <Download className="w-5 h-5 mr-2" /> Download Resume (PDF)
               </a>
             </div>
-
           </div>
 
           {/* Contact Form */}
@@ -126,6 +136,11 @@ const Contact = () => {
               {submitStatus === 'success' && (
                 <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6 text-lg sm:text-xl">
                   Thank you for your message! I'll get back to you soon.
+                </div>
+              )}
+              {submitStatus === 'error' && (
+                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6 text-lg sm:text-xl">
+                  Oops! Something went wrong. Please try again later.
                 </div>
               )}
 
