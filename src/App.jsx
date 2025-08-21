@@ -5,7 +5,6 @@ import Experience from './components/Experience'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import Hero from './components/Hero'
-import Meta from './components/Meta'
 import Projects from './components/Projects'
 import ScrollToTop from './components/ScrollToTop'
 import Skills from './components/Skills'
@@ -14,7 +13,6 @@ import SlideUpOnScroll from './components/slideuponscroll'
 function App() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <Meta />
       <Header />
       <main>
         <Hero />
