@@ -55,7 +55,7 @@ const Projects = () => {
   }
 
   const hoverCard = {
-    hover: { scale: 1.03, boxShadow: "0px 20px 35px rgba(0,0,0,0.15)" },
+    hover: { scale: 1.04, boxShadow: "0px 25px 50px rgba(0,0,0,0.2)" },
   }
 
   const techHover = {
@@ -87,7 +87,7 @@ const Projects = () => {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
           {projects.map((project) => (
             <motion.div
               key={project.id}
@@ -96,23 +96,25 @@ const Projects = () => {
               whileInView="visible"
               viewport={{ once: true }}
               whileHover={hoverCard.hover}
-              className="bg-white rounded-3xl shadow-lg overflow-hidden transition-all duration-300 cursor-pointer w-full max-w-2xl mx-auto"
+              className="bg-white rounded-3xl shadow-xl overflow-hidden transition-all duration-300 cursor-pointer w-full max-w-3xl mx-auto"
             >
               {/* Project Image */}
-              <div className="relative w-full h-48">
+              <div className="relative w-full h-60 rounded-t-3xl overflow-hidden">
                 <img
                   src={project.coverImage}
                   alt={`${project.title} cover`}
-                  className="w-full h-full object-cover rounded-t-3xl transition-transform duration-300 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-xl sm:text-2xl font-bold drop-shadow-lg">
+                    {project.title}
+                  </h3>
+                </div>
               </div>
 
               {/* Project Content */}
               <div className="p-6">
-                <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-2">
-                  {project.title}
-                </h3>
-
                 <p className="text-gray-700 mb-4 text-base sm:text-lg line-clamp-3">
                   {project.description}
                 </p>
