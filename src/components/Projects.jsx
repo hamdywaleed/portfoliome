@@ -121,10 +121,10 @@ const Projects = () => {
                     className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
                   {/* Title Overlay */}
                   <div className="absolute bottom-4 left-4 sm:left-6 sm:bottom-6 text-white">
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold drop-shadow-lg">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold drop-shadow-lg ">
                       {project.title}
                     </h3>
                   </div>
