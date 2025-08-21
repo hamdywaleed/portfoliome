@@ -21,7 +21,7 @@ const Meta = () => {
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta name="twitter:title" content="Shnno | Full-Stack Developer Portfolio" />
 			<meta name="twitter:description" content="Explore my recent projects in backend and full-stack development." />
-			<meta name="twitter:image" content="https://yourdomain.com/assets/cover.png" />
+			<meta name="twitter:image" content="../assets/profile.png" />
 		</Helmet>
 	);
 };
