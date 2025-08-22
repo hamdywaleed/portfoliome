@@ -46,7 +46,7 @@ const Hero = () => {
     <section
       id="home"
       className="relative min-h-screen flex items-center justify-center
-                 bg-gradient-to-br from-blue-50 to-indigo-100 pt-0 sm:pt-8 lg:pt-16
+                 bg-indigo-100 pt-0 sm:pt-8 lg:pt-16
                  overflow-hidden w-full max-w-full overflow-x-hidden"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
