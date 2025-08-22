@@ -45,7 +45,9 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 pt-16 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center
+                 bg-gradient-to-br from-blue-50 to-indigo-100 pt-16
+                 overflow-hidden w-full max-w-full overflow-x-hidden"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -61,7 +63,7 @@ const Hero = () => {
               custom={1}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4"
             >
-              Hi, I'm <span className="block text-blue-600">Ahmed El-Shenawy</span>
+              Hi, I'm
             </motion.h1>
 
             <motion.h2
@@ -83,10 +85,11 @@ const Hero = () => {
               </p>
             </motion.div>
 
+            {/* ✅ FIXED: Buttons always horizontal + no overflow */}
             <motion.div
               variants={textVariants}
               custom={4}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
+              className="flex flex-row flex-wrap gap-4 justify-center lg:justify-start mb-8"
             >
               <motion.div whileHover="hover" whileTap="tap" variants={buttonVariants}>
                 <Button

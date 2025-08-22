@@ -16,27 +16,38 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <SlideUpOnScroll>
-          <About />
-        </SlideUpOnScroll>
 
-        <SlideUpOnScroll>
-          <Skills />
-        </SlideUpOnScroll>
+        <section id="about">
+          <SlideUpOnScroll>
+            <About />
+          </SlideUpOnScroll>
+        </section>
 
+        <section id="skills">
+          <SlideUpOnScroll>
+            <Skills />
+          </SlideUpOnScroll>
+        </section>
 
-        <SlideUpOnScroll>
-          <Projects />
-        </SlideUpOnScroll>
+        <section id="projects">
+          <SlideUpOnScroll>
+            <Projects />
+          </SlideUpOnScroll>
+        </section>
 
-        <SlideUpOnScroll>
-          <Experience />
-        </SlideUpOnScroll>
+        <section id="experience">
+          <SlideUpOnScroll>
+            <Experience />
+          </SlideUpOnScroll>
+        </section>
 
-        <SlideUpOnScroll>
-          <Contact />
-        </SlideUpOnScroll>
+        <section id="contact">
+          <SlideUpOnScroll>
+            <Contact />
+          </SlideUpOnScroll>
+        </section>
       </main>
+
       <Footer />
       <ScrollToTop />
     </div>

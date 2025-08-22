@@ -4,49 +4,19 @@ import aboutImage from '../assets/about-workspace.jpg'
 
 const About = () => {
   const values = [
-    {
-      icon: <Code className="w-10 h-10 text-blue-600" />,
-      title: "Clean Code",
-      description: "I believe in writing maintainable, readable code that stands the test of time."
-    },
-    {
-      icon: <Lightbulb className="w-10 h-10 text-orange-500" />,
-      title: "Innovation",
-      description: "Always exploring new technologies and approaches to solve complex problems."
-    },
-    {
-      icon: <Users className="w-10 h-10 text-green-600" />,
-      title: "Collaboration",
-      description: "Strong believer in teamwork and knowledge sharing to achieve common goals."
-    },
-    {
-      icon: <Coffee className="w-10 h-10 text-amber-600" />,
-      title: "Continuous Learning",
-      description: "Committed to staying current with industry trends and best practices."
-    }
+    { icon: <Code className="w-10 h-10 text-blue-600" />, title: "Clean Code", description: "I believe in writing maintainable, readable code that stands the test of time." },
+    { icon: <Lightbulb className="w-10 h-10 text-orange-500" />, title: "Innovation", description: "Always exploring new technologies and approaches to solve complex problems." },
+    { icon: <Users className="w-10 h-10 text-green-600" />, title: "Collaboration", description: "Strong believer in teamwork and knowledge sharing to achieve common goals." },
+    { icon: <Coffee className="w-10 h-10 text-amber-600" />, title: "Continuous Learning", description: "Committed to staying current with industry trends and best practices." }
   ]
 
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
-  }
-
-  const fadeUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
-  }
-
-  const hoverCard = {
-    hover: { scale: 1.05, boxShadow: '0px 10px 25px rgba(0,0,0,0.15)' }
-  }
+  const containerVariants = { hidden: {}, visible: { transition: { staggerChildren: 0.15 } } }
+  const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } } }
+  const hoverCard = { hover: { scale: 1.05, boxShadow: '0px 10px 25px rgba(0,0,0,0.15)' } }
 
   return (
-    <section id="about" className="py-24 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-24 bg-white overflow-x-hidden">
+      <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div
           className="text-center mb-20"
@@ -79,16 +49,14 @@ const About = () => {
             <motion.div variants={fadeUp} className="space-y-6 text-gray-700 text-lg sm:text-xl">
               <p>
                 I began my journey in Computer Engineering and AI at the Military Technical College in Egypt,
-                inspired by turning complex problems into practical systems. I realized that building AI models
-                is only half the story—delivering them through reliable, scalable backend systems makes them truly useful.
+                inspired by turning complex problems into practical systems...
               </p>
               <p>
                 As an AI Engineer and Node.js RESTful API Developer, I’ve built backends, image-processing APIs,
-                and full-stack applications, integrating AI solutions and automating deployment pipelines for scalable, production-ready systems.
+                and full-stack applications...
               </p>
               <p>
-                Outside of coding, I spend time experimenting with Generative AI and applying it to projects,
-                finding practical ways to integrate AI into real systems. I focus on building technology that actually works and solves problems.
+                Outside of coding, I spend time experimenting with Generative AI and applying it to projects...
               </p>
             </motion.div>
 
@@ -104,7 +72,7 @@ const About = () => {
 
           {/* About Image */}
           <motion.div
-            className="flex justify-center relative"
+            className="flex justify-center relative overflow-hidden"
             initial={{ opacity: 0, x: 50, scale: 0.95 }}
             whileInView={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -117,13 +85,14 @@ const About = () => {
                 alt="Ahmed working"
                 className="w-full max-w-md rounded-lg shadow-xl"
               />
+              {/* floating shapes inside overflow-hidden wrapper */}
               <motion.div
-                className="absolute -bottom-4 -right-4 w-28 h-28 bg-blue-500 rounded-lg opacity-20"
+                className="absolute bottom-0 right-0 w-24 h-24 bg-blue-500 rounded-lg opacity-20"
                 animate={{ y: [0, -15, 0], rotate: [0, 15, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
               />
               <motion.div
-                className="absolute -top-4 -left-4 w-20 h-20 bg-orange-500 rounded-lg opacity-20"
+                className="absolute top-0 left-0 w-16 h-16 bg-orange-500 rounded-lg opacity-20"
                 animate={{ y: [0, 15, 0], rotate: [0, -15, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
               />
