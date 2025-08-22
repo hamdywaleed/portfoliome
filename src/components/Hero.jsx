@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
 import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import heroImage from '../assets/profile.jpeg'
+import heroImage from '/portfolio.png'
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('')
