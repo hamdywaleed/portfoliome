@@ -6,7 +6,7 @@ import heroImage from '../assets/profile.jpeg'
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('')
-  const fullText = 'I build scalable, user-focused software solutions'
+  const fullText = 'AI Engineer | Node.js RESTful API Developer'
 
   useEffect(() => {
     let index = 0
@@ -46,11 +46,11 @@ const Hero = () => {
     <section
       id="home"
       className="relative min-h-screen flex items-center justify-center
-                 bg-gradient-to-br from-blue-50 to-indigo-100 pt-16
+                 bg-gradient-to-br from-blue-50 to-indigo-100 pt-0 sm:pt-8 lg:pt-16
                  overflow-hidden w-full max-w-full overflow-x-hidden"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
           {/* Text Content */}
           <motion.div
@@ -66,35 +66,28 @@ const Hero = () => {
               Hi, I'm
             </motion.h1>
 
-            <motion.h2
-              variants={textVariants}
-              custom={2}
-              className="text-xl sm:text-2xl lg:text-3xl text-gray-700 mb-6"
-            >
-              AI Engineer | Node.js RESTful API Developer
-            </motion.h2>
-
+            {/* Typing Text */}
             <motion.div
               variants={textVariants}
               custom={3}
               className="h-16 mb-8"
             >
-              <p className="text-lg sm:text-xl text-gray-600 min-h-[2rem]">
+              <p className="text-lg sm:text-2xl lg:text-3xl text-gray-700 mb-6 whitespace-nowrap overflow-hidden text-ellipsis">
                 {displayText}
                 <span className="animate-pulse">|</span>
               </p>
             </motion.div>
 
-            {/* ✅ FIXED: Buttons always horizontal + no overflow */}
+            {/* Buttons */}
             <motion.div
               variants={textVariants}
               custom={4}
-              className="flex flex-row flex-wrap gap-4 justify-center lg:justify-start mb-8"
+              className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8"
             >
               <motion.div whileHover="hover" whileTap="tap" variants={buttonVariants}>
                 <Button
                   onClick={() => scrollToSection('#projects')}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg sm:text-xl font-medium transition-all duration-200"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 text-base sm:text-lg lg:text-xl font-medium transition-all duration-200"
                 >
                   View My Work
                 </Button>
@@ -104,7 +97,7 @@ const Hero = () => {
                 <Button
                   onClick={() => scrollToSection('#contact')}
                   variant="outline"
-                  className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 text-lg sm:text-xl font-medium transition-all duration-200"
+                  className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 sm:px-8 py-3 text-base sm:text-lg lg:text-xl font-medium transition-all duration-200"
                 >
                   Get In Touch
                 </Button>
@@ -137,7 +130,7 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <div className="relative">
-              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-gradient-to-br from-blue-100 to-purple-100 p-2 hover:scale-105 transition-transform duration-500">
+              <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-gradient-to-br from-blue-100 to-purple-100 p-2 hover:scale-105 transition-transform duration-500">
                 <img
                   src={heroImage}
                   alt="Ahmed El-Shenawy - Software Engineer"
@@ -146,12 +139,12 @@ const Hero = () => {
               </div>
               {/* Floating decorative circles */}
               <motion.div
-                className="absolute -top-4 -right-4 w-20 h-20 bg-blue-500 rounded-full opacity-20"
+                className="absolute -top-4 -right-4 w-14 h-14 sm:w-20 sm:h-20 bg-blue-500 rounded-full opacity-20"
                 animate={{ y: [0, -15, 0], rotate: [0, 45, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
               />
               <motion.div
-                className="absolute -bottom-4 -left-4 w-16 h-16 bg-orange-500 rounded-full opacity-20"
+                className="absolute -bottom-4 -left-4 w-12 h-12 sm:w-16 sm:h-16 bg-orange-500 rounded-full opacity-20"
                 animate={{ y: [0, 15, 0], rotate: [0, -45, 0] }}
                 transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
               />
