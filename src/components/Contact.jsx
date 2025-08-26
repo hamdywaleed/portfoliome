@@ -13,6 +13,10 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState('')
 
+  // For resume download
+  const [isSending, setIsSending] = useState(false)
+  const [resumeStatus, setResumeStatus] = useState('')
+
   const handleInputChange = (e) => {
     const { name, value } = e.target
     setFormData(prev => ({
@@ -30,7 +34,7 @@ const Contact = () => {
         'service_67jk2x2',   // replace with your EmailJS service ID
         'template_kni3rnz',  // replace with your EmailJS template ID
         formData,
-        'DHno3fGxHEoSFnRZg'    // replace with your EmailJS public key
+        'DHno3fGxHEoSFnRZg'  // replace with your EmailJS public key
       )
 
       setSubmitStatus('success')
@@ -41,6 +45,38 @@ const Contact = () => {
     } finally {
       setIsSubmitting(false)
       setTimeout(() => setSubmitStatus(''), 3000)
+    }
+  }
+
+  const handleResumeDownload = async () => {
+    setIsSending(true)
+
+    try {
+      await emailjs.send(
+        'service_67jk2x2',   // replace with your EmailJS service ID
+        'template_kni3rnz',  // replace with your EmailJS template ID
+        {
+          subject: "Resume Downloaded",
+          message: "Someone just downloaded Ahmed El Shenawy's resume.",
+          name: "Resume Download",
+          email: "no-reply@example.com"
+        },
+        'DHno3fGxHEoSFnRZg'  // replace with your EmailJS public key
+      )
+
+      setResumeStatus('success')
+
+      // trigger actual download
+      const link = document.createElement('a')
+      link.href = '/Ahmed_El_Shenawy_resume.pdf'
+      link.download = 'Ahmed_El_Shenawy_resume.pdf'
+      link.click()
+    } catch (error) {
+      console.error(error)
+      setResumeStatus('error')
+    } finally {
+      setIsSending(false)
+      setTimeout(() => setResumeStatus(''), 3000)
     }
   }
 
@@ -113,18 +149,21 @@ const Contact = () => {
               </div>
             </div>
 
+            {/* Resume Download */}
             <div className="bg-gray-50 rounded-lg p-6">
               <h4 className="font-semibold text-gray-900 text-lg sm:text-xl mb-3">Download My Resume</h4>
               <p className="text-gray-600 text-lg sm:text-xl mb-4">
                 Get a detailed overview of my experience, skills, and achievements.
               </p>
-              <a
-                href="/Ahmed_El_Shenawy_resume.pdf"
-                download
+              <Button
+                onClick={handleResumeDownload}
+                disabled={isSending}
                 className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white text-lg sm:text-xl py-3 px-6 rounded transition-all duration-200"
               >
-                <Download className="w-5 h-5 mr-2" /> Download Resume (PDF)
-              </a>
+                {isSending ? "Sending..." : <><Download className="w-5 h-5 mr-2" /> Download Resume (PDF)</>}
+              </Button>
+              {resumeStatus === 'success' && <p className="text-green-600 mt-3">✅ Email sent!</p>}
+              {resumeStatus === 'error' && <p className="text-red-600 mt-3">❌ Failed to send email</p>}
             </div>
           </div>
 
