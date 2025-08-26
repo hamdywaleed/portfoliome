@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button'
 import emailjs from '@emailjs/browser'
-import { Download, Github, Linkedin, Mail, MapPin, Phone, Send, Twitter } from 'lucide-react'
+import { Github, Linkedin, Mail, MapPin, Phone, Send, Twitter } from 'lucide-react'
 import { useState } from 'react'
 
 const Contact = () => {
@@ -146,10 +146,26 @@ const Contact = () => {
               </p>
               <Button
                 onClick={handleResumeDownload}
-                className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white text-lg sm:text-xl py-3 px-6 rounded transition-all duration-200"
+                aria-label="Download Resume"
+                className="
+                      w-full max-w-xs
+                      bg-blue-600 hover:bg-blue-700
+                      active:scale-95
+                      transition-transform duration-200 ease-in-out
+                      text-white font-medium
+                      py-2 px-5 text-sm sm:text-base
+                      rounded-md
+                      flex items-center justify-center
+                      shadow-md hover:shadow-lg
+                      focus:outline-none focus:ring-2 focus:ring-blue-400
+                      focus:ring-offset-1
+                    "
               >
-                <Download className="w-5 h-5 mr-2" /> Download Resume (PDF)
+                Download Resume
               </Button>
+
+
+
             </div>
           </div>
 
@@ -231,20 +247,35 @@ const Contact = () => {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 text-lg sm:text-xl flex items-center justify-center"
+                  aria-busy={isSubmitting}
+                  aria-label={isSubmitting ? "Sending message" : "Send message"}
+                  className="
+                      w-full
+                      bg-blue-600 hover:bg-blue-700 focus:outline-none
+                      focus:ring-2 focus:ring-blue-400 focus:ring-offset-2
+                      text-white font-semibold tracking-wide
+                      py-4
+                      text-lg sm:text-xl
+                      flex items-center justify-center gap-2
+                      rounded-md
+                      shadow-md hover:shadow-lg
+                      transition-all duration-300 ease-in-out
+                      disabled:opacity-50 disabled:cursor-not-allowed
+                    "
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                      <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent" />
                       Sending...
                     </>
                   ) : (
                     <>
-                      <Send className="w-5 h-5 mr-2" />
+                      <Send className="w-5 h-5" />
                       Send Message
                     </>
                   )}
                 </Button>
+
               </form>
             </div>
           </div>
