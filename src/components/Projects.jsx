@@ -90,7 +90,7 @@ const Projects = () => {
             <motion.div
               key={project.id}
               whileHover={hoverCard.hover}
-              className="bg-white rounded-3xl shadow-xl overflow-hidden transition-all duration-300 cursor-pointer w-full sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto"
+              className="bg-white rounded-3xl shadow-xl overflow-hidden transition-all duration-300 cursor-pointer w-full"
             >
               {/* Project Image */}
               <div className="relative w-full rounded-t-3xl overflow-hidden group">
