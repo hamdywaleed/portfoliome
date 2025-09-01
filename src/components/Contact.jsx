@@ -27,7 +27,7 @@ const Contact = () => {
 
     try {
       await emailjs.send(
-        'service_67jk2x2',   // replace with your EmailJS service ID
+        'service_bvp19to',   // replace with your EmailJS service ID
         'template_kni3rnz',  // replace with your EmailJS template ID
         formData,
         'DHno3fGxHEoSFnRZg'  // replace with your EmailJS public key
@@ -48,7 +48,7 @@ const Contact = () => {
   const handleResumeDownload = async () => {
     try {
       await emailjs.send(
-        'service_67jk2x2',
+        'service_bvp19to',
         'template_kni3rnz',
         {
           subject: "Resume Downloaded",
