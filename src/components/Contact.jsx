@@ -76,9 +76,8 @@ const Contact = () => {
   ]
 
   const socialLinks = [
-    { icon: <Github className="w-7 h-7" />, name: "GitHub", url: "https://github.com/yourusername", color: "hover:text-gray-900" },
-    { icon: <Linkedin className="w-7 h-7" />, name: "LinkedIn", url: "https://linkedin.com/in/yourusername", color: "hover:text-blue-600" },
-    { icon: <Twitter className="w-7 h-7" />, name: "Twitter", url: "https://twitter.com/yourusername", color: "hover:text-blue-400" }
+    { icon: <Github className="w-7 h-7" />, name: "GitHub", url: "https://github.com/ahmed-el-shenawy", color: "hover:text-gray-900" },
+    { icon: <Linkedin className="w-7 h-7" />, name: "LinkedIn", url: "https://www.linkedin.com/in/ahmed-el-shnnawy/", color: "hover:text-blue-600" },
   ]
 
   return (
