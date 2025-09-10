@@ -50,8 +50,7 @@ const About = () => {
 
             <motion.div variants={fadeUp} className="space-y-5 text-gray-700 text-base sm:text-lg">
               <p>
-                I began my journey in Computer Engineering and AI at the Military Technical College in Egypt,
-                inspired by turning complex problems into practical systems.
+                I began my journey in Computer Engineering and AI, inspired by turning complex problems into practical systems.
               </p>
               <p>
                 As an AI Engineer and Node.js RESTful API Developer, I’ve built backends, image-processing APIs,

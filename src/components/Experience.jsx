@@ -32,7 +32,6 @@ const Experience = () => {
   const education = [
     {
       degree: "B.Sc. in Computer Engineering and AI",
-      school: "Military Technical College",
       location: "Egypt",
       period: "2020 – 2024",
       gpa: "Very Good",

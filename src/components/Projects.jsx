@@ -47,20 +47,7 @@ const Projects = () => {
         "Fully functional full-stack application",
       ],
     },
-    {
-      id: 4,
-      title: "Online Store Backend",
-      description:
-        "Backend for an online store using Node.js and PostgreSQL with RESTful APIs. Built and delivered the full project from development to deployment, integrating APIs and deployment pipelines for full functionality.",
-      technologies: ["Node.js", "PostgreSQL", "Express", "REST API"],
-      githubUrl: "https://github.com/hamdy/Storefront-backend",
-      coverImage: OnlineStoreImg,
-      features: [
-        "RESTful API development",
-        "Database integration with PostgreSQL",
-        "Full project deployment and pipeline setup",
-      ],
-    },
+    
   ]
 
   const hoverCard = {
