@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
 import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import heroImage from '/portfolio.png'
+import heroImage from '/portfolio.jpeg'
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('')
@@ -110,13 +110,13 @@ const Hero = () => {
               custom={5}
               className="flex gap-6 justify-center lg:justify-start text-gray-600"
             >
-              <motion.a href="https://github.com/ahmed-el-shenawy" target="_blank" rel="noopener noreferrer" variants={socialVariants} whileHover="hover">
+              <motion.a href="https://github.com/hamdywaleed" target="_blank" rel="noopener noreferrer" variants={socialVariants} whileHover="hover">
                 <Github size={28} />
               </motion.a>
-              <motion.a href="https://www.linkedin.com/in/ahmed-el-shnnawy/" target="_blank" rel="noopener noreferrer" variants={socialVariants} whileHover="hover">
+              <motion.a href="https://www.linkedin.com/in/hamdy-waleed-b3854814a//" target="_blank" rel="noopener noreferrer" variants={socialVariants} whileHover="hover">
                 <Linkedin size={28} />
               </motion.a>
-              <motion.a href="mailto:ahmedelshnawy91@gmail.com" variants={socialVariants} whileHover="hover">
+              <motion.a href="mailto:hamdywaleed20@gmail.com" variants={socialVariants} whileHover="hover">
                 <Mail size={28} />
               </motion.a>
             </motion.div>
@@ -133,7 +133,7 @@ const Hero = () => {
               <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-gradient-to-br from-blue-100 to-purple-100 p-2 hover:scale-105 transition-transform duration-500">
                 <img
                   src={heroImage}
-                  alt="Ahmed El-Shenawy - Software Engineer"
+                  alt="Hamdy Waleed - Software Engineer"
                   className="w-full h-full object-cover rounded-xl"
                 />
               </div>

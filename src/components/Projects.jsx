@@ -11,7 +11,7 @@ const Projects = () => {
       description:
         "Backend for an online store using Node.js and PostgreSQL with RESTful APIs. Built and delivered the full project from development to deployment, integrating APIs and deployment pipelines for full functionality.",
       technologies: ["Node.js", "PostgreSQL", "Express", "REST API"],
-      githubUrl: "https://github.com/ahmed-el-shenawy/Storefront-backend",
+      githubUrl: "https://github.com/hamdy/Storefront-backend",
       coverImage: OnlineStoreImg,
       features: [
         "RESTful API development",
@@ -25,7 +25,7 @@ const Projects = () => {
       description:
         "API to resize images via URL requests, enabling dynamic image processing for web and mobile applications.",
       technologies: ["Node.js", "Express", "Sharp"],
-      githubUrl: "https://github.com/ahmed-el-shenawy/ImageResizing-api",
+      githubUrl: "https://github.com/hamdy/ImageResizing-api",
       coverImage: OnlineStoreImg,
       features: [
         "Resize images via URL requests",
@@ -39,7 +39,7 @@ const Projects = () => {
       description:
         "Integrated front-end interfaces with back-end APIs to create a fully functional application. Automated the development workflow using CircleCI for CI/CD.",
       technologies: ["React", "Node.js", "Express", "CircleCI"],
-      githubUrl: "https://github.com/ahmed-el-shenawy/udacity-third-project",
+      githubUrl: "https://github.com/hamdy/udacity-third-project",
       coverImage: OnlineStoreImg,
       features: [
         "Front-end and back-end integration",
@@ -53,7 +53,7 @@ const Projects = () => {
       description:
         "Backend for an online store using Node.js and PostgreSQL with RESTful APIs. Built and delivered the full project from development to deployment, integrating APIs and deployment pipelines for full functionality.",
       technologies: ["Node.js", "PostgreSQL", "Express", "REST API"],
-      githubUrl: "https://github.com/ahmed-el-shenawy/Storefront-backend",
+      githubUrl: "https://github.com/hamdy/Storefront-backend",
       coverImage: OnlineStoreImg,
       features: [
         "RESTful API development",
@@ -169,7 +169,7 @@ const Projects = () => {
           <Button
             variant="outline"
             className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 sm:py-3 text-lg sm:text-xl transition-all duration-200"
-            onClick={() => window.open("https://github.com/yourusername", "_blank")}
+            onClick={() => window.open("https://github.com/hamdywaleed", "_blank")}
           >
             <Github className="w-6 h-6 mr-2" />
             View All Projects on GitHub

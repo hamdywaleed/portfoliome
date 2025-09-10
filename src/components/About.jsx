@@ -85,7 +85,7 @@ const About = () => {
             <div className="relative">
               <img
                 src={aboutImage}
-                alt="Ahmed working"
+                alt="Hamdy working"
                 className="w-full max-w-md rounded-xl shadow-xl"
               />
               {/* Floating shapes */}

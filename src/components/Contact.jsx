@@ -52,7 +52,7 @@ const Contact = () => {
         'template_kni3rnz',
         {
           subject: "Resume Downloaded",
-          message: "Someone just downloaded Ahmed El Shenawy's resume.",
+          message: "Someone just downloaded Hamdy Waleed's resume.",
           name: "Resume Download",
           email: "no-reply@example.com"
         },
@@ -63,21 +63,22 @@ const Contact = () => {
     } finally {
       // always trigger download
       const link = document.createElement('a')
-      link.href = '/Ahmed_El_Shenawy_resume.pdf'
-      link.download = 'Ahmed_El_Shenawy_resume.pdf'
+      link.href = '/hamdy_waleed.pdf'
+      link.download = 'hamdy_waleed.pdf'
       link.click()
     }
   }
 
   const contactInfo = [
-    { icon: <Mail className="w-7 h-7" />, title: "Email", value: "ahmedelshenawy91@gmail.com", link: "mailto:ahmedelshenawy91@gmail.com" },
-    { icon: <Phone className="w-7 h-7" />, title: "Phone", value: "+20 102 878 6309", link: "tel:+20123456789" },
+    { icon: <Mail className="w-7 h-7" />, title: "Email", value: "hamdywaleed20@gmail.com", link: "mailto:hamdywaleed20@gmail.com" },
+    { icon: <Phone className="w-7 h-7" />, title: "Phone", value: "+20 1505142388", link: "tel:+201505142388" },
     { icon: <MapPin className="w-7 h-7" />, title: "Location", value: "Cairo, Egypt", link: null }
   ]
 
   const socialLinks = [
-    { icon: <Github className="w-7 h-7" />, name: "GitHub", url: "https://github.com/ahmed-el-shenawy", color: "hover:text-gray-900" },
-    { icon: <Linkedin className="w-7 h-7" />, name: "LinkedIn", url: "https://www.linkedin.com/in/ahmed-el-shnnawy/", color: "hover:text-blue-600" },
+    { icon: <Github className="w-7 h-7" />, name: "GitHub", url: "https://github.com/hamdywaleed", color: "hover:text-gray-900" },
+    { icon: <Linkedin className="w-7 h-7" />, name: "LinkedIn", url: "https://linkedin.com/in/hamdy-waleed-b3854814a/", color: "hover:text-blue-600" },
+    { icon: <Twitter className="w-7 h-7" />, name: "Twitter", url: "https://twitter.com/hamdywaaleed", color: "hover:text-blue-400" }
   ]
 
   return (

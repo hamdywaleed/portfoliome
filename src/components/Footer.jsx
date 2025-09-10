@@ -19,17 +19,17 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: <Github className="w-5 h-5" />,
-      href: "https://github.com/ahmed-el-shenawy",
+      href: "https://github.com/hamdywaleed",
       label: "GitHub"
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
-      href: "https://www.linkedin.com/in/ahmed-el-shnnawy/",
+      href: "https://www.linkedin.com/in/hamdy-waleed-b3854814a/",
       label: "LinkedIn"
     },
     {
       icon: <Mail className="w-5 h-5" />,
-      href: "mailto:ahmedelshnawy91@gmail.com",
+      href: "mailto:hamdywaleed1@gmail.com",
       label: "Email"
     }
   ]
@@ -49,7 +49,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Brand Section */}
             <div className="md:col-span-2">
-              <h3 className="text-2xl font-bold mb-4">Ahmed El-Shenawy</h3>
+              <h3 className="text-2xl font-bold mb-4">Hamdy Waleed</h3>
               <p className="text-gray-300 mb-6 max-w-md">
                 Passionate AI Engineer | Node.js RESTful API Developer dedicated to building innovative solutions
                 that make a difference. Always learning, always growing.
@@ -95,16 +95,16 @@ const Footer = () => {
               <div className="space-y-2 text-gray-300">
                 <p>Cairo, Egypt</p>
                 <a
-                  href="mailto:ahmedelshnawy91@gmail.com"
+                  href="mailto:hamdywaleed20@gmail.com"
                   className="block hover:text-white transition-colors duration-200"
                 >
-                  ahmedelshnawy91@gmail.com
+                  hamdywaleed20@gmail.com
                 </a>
                 <a
-                  href="tel:+201028786309"
+                  href="tel:+201505142388"
                   className="block hover:text-white transition-colors duration-200"
                 >
-                  +20 102 878 6309
+                  +201505142388
                 </a>
 
               </div>
@@ -116,7 +116,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center text-gray-300 mb-4 md:mb-0">
-              <span>© {currentYear} Ahmed El-Shenawy. Made with</span>
+              <span>© {currentYear} Hamdy Waleed. Made with</span>
               <Heart className="w-4 h-4 mx-1 text-red-500" />
             </div>
 

@@ -40,7 +40,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-blue-900 tracking-tight">
-              Ahmed El-Shenawy
+              Hamdy Waleed
             </h1>
           </div>
 
